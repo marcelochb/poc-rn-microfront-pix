@@ -1,9 +1,17 @@
 import React from 'react';
-import { ThemeBase } from '@poc/theme';
 import { PixDetailTemplate } from '@poc/templates';
+import { usePixDetailController } from '@poc/core';
+import { useSelector } from 'react-redux';
+import { IGlobalState } from '@poc/interfaces';
 
 export const PixDetail = () => {
+  const theme = useSelector((state:IGlobalState) => state.theme.value);
+  const {data,loading,error} = usePixDetailController();
   return (
-    <PixDetailTemplate theme={ThemeBase.Midway} />
+    <PixDetailTemplate theme={theme} 
+      data={data}
+      error={error}
+      loading={loading}
+    />
   );
 };

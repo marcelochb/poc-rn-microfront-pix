@@ -1,13 +1,13 @@
-export type ModelOfPixScreens = {
+export type IPixScreens = {
   list: string;
   detail: string;
 }
-export type ModelOfPixNavigator = {
+export type IPixNavigator = {
   stack: string;
   title: string;
-  screens: ModelOfPixScreens;
+  screens: IPixScreens;
 }
-export const PIX_NAVIGATORS:ModelOfPixNavigator = {
+export const PIX_NAVIGATORS:IPixNavigator = {
   stack: 'PixStack',
   title: 'Pix',
   screens: {
